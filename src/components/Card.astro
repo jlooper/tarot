@@ -1,0 +1,48 @@
+---
+export interface Props {
+	title: string;
+	up: string;
+	rev: string;
+	emoji: string;
+}
+
+const {title, up, rev, emoji } = Astro.props;
+---
+
+<li class="link-card">
+		<h2>
+			{title} {emoji}
+			
+		</h2>
+		<p>
+			<b>Meaning:</b> {up}
+		</p>
+		<p>
+			<b>Reverse Meaning:</b> {rev}
+		</p>
+		
+</li>
+<style>
+	.link-card {
+		list-style: none;
+		display: grid;
+		padding: 1rem;
+		background-color: white;
+		border-radius: 0.5rem;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	}
+	
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #444;
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent));
+	}
+</style>

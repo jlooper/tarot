@@ -1,0 +1,182 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="navbar">
+          <div id="logo">
+            <div class="logo">AWS Tarot</div>
+          </div>
+          <div id="links">
+            <a href="about">About</a>
+          	<a href="read">How to Read Tarot</a>
+          	<a href="gumroad">Download a Copy</a>
+          	<a href="etsy">Buy a Printed Pack</a>
+          </div>
+
+          <div class="mobile-btn">
+            <a id="menu-btn" onclick="myFunction()" class="fa fa-bars fa-2x"
+            ></a>
+          </div>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <ul class="mobile-links">
+          <li class="nav-list"><a href="about">About</a></li>
+          <li class="nav-list"><a href="read">How to Read Tarot</a></li>
+          <li class="nav-list"><a href="gumroad">Download a Copy</a></li>
+          <li class="nav-list"><a href="etsy">Buy a Printed Pack</a></li>
+        </ul>
+      </div>
+    </header>
+	<div id="particles-js"></div>
+    <slot />
+  </body>
+</html>
+
+<script>
+ import "../data/particles.js";
+ window.particlesJS.load('particles-js', '/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});</script>
+
+
+
+<style is:global>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #8d307c 30%,
+      rgb(160, 22, 202) 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: black;
+    margin: 0px;
+  }
+  body {
+    margin: 0px;
+  }
+  a {
+    color: white;
+    padding: 1.5rem;
+  }
+  #navbar {
+    display: grid;
+    min-height: 100px;
+    grid-auto-flow: column;
+    background-image: var(--accent-gradient);
+    grid-gap: 1.5em;
+    padding: 0 40px;
+    -webkit-box-shadow: -1px 4px 5px 0px rgb(80, 13, 80);
+    -moz-box-shadow: -1px 4px 5px 0px rgb(49, 5, 49);
+    box-shadow: -1px 4px 5px 0px rgb(31, 9, 31);
+  }
+
+  #logo {
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+    text-transform: uppercase;
+  }
+
+
+
+  #links {
+    display: grid;
+    justify-content: right;
+    align-content: center;
+    grid-auto-flow: column;
+    grid-gap: 1.5em;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  a:hover {
+    color: #0474bc;
+  }
+
+  /* =======================
+******* Mobile Menu ******
+========================*/
+  .mobile-menu {
+    display: block;
+    list-style-type: none;
+    background-color: #fff;
+    float: right;
+    width: 150px;
+    padding: 5px 0 50px 0;
+    border: 1px solid #eee;
+    z-index: 55;
+  }
+
+  .mobile-links li {
+    line-height: 2.8rem;
+  }
+
+  .mobile-btn {
+    display: grid;
+    justify-content: right;
+    align-content: center;
+    grid-auto-flow: column;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    font-family: "Open Sans", sans-serif;
+    list-style-type: none;
+  }
+
+  .nav-list:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  /* Mobile to Tablet  */
+  @media (min-width: 320px) and (max-width: 767px) {
+    #links,
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  /* Tablet to Desktop */
+  @media (min-width: 768px) {
+    .mobile-menu,
+    .mobile-btn,
+    .fa-bars {
+      display: none;
+    }
+  }
+  #particles-js {
+	z-index: 100;
+	position:absolute;
+  }
+</style>
