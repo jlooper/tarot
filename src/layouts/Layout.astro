@@ -25,7 +25,8 @@ const { title } = Astro.props;
           <div id="links">
             <a href="/about">About</a>
           	<a href="/read">How to Read Tarot</a>
-          	<a href="gumroad">Download a Copy</a>
+			<a href="/meanings">Meaning Match</a>
+          	<a href="https://jenlooper.gumroad.com/l/aws-tarot">Download a Printable Copy</a>
           	<a href="etsy">Buy a Printed Pack</a>
           </div>
 
@@ -40,7 +41,8 @@ const { title } = Astro.props;
         <ul class="mobile-links">
           <li class="nav-list"><a href="/about">About</a></li>
           <li class="nav-list"><a href="/read">How to Read Tarot</a></li>
-          <li class="nav-list"><a href="gumroad">Download a Copy</a></li>
+		  <li class="nav-list"></li><a href="/meanings">Meaning Match</a></li>
+          <li class="nav-list"><a href="https://jenlooper.gumroad.com/l/aws-tarot">Download a Printable Copy</a></li>
           <li class="nav-list"><a href="etsy">Buy a Printed Pack</a></li>
         </ul>
       </div>
@@ -178,5 +180,10 @@ const { title } = Astro.props;
   #particles-js {
 	z-index: 100;
 	position:absolute;
+  }
+  .particles-js-canvas-el {
+	width: 100vw;
+	height: 100vh;
+
   }
 </style>

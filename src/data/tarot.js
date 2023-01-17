@@ -9,6 +9,8 @@ export const Cards = [
             'Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of enemies; self-confidence, will; the Querent, if male. ',
         rev: 'Physician, Magus, mental disease, disgrace, disquiet.',
         type: 'major',
+        service: 'xx',
+        meaning: 'yy'
     },
     {
         name: 'The High Priestess',
