@@ -1,14 +1,77 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TextCard from '../components/TextCard.astro';
+import Layout from "../layouts/Layout.astro";
+import TextCard from "../components/TextCard.astro";
 ---
 
 <Layout title="Reading Tarot">
-	<main>
-		<h1><span class="text-gradient">How to read Tarot</span></h1>
-		
-		<TextCard title="How to read Tarot" text="hey"/>
-		
-		
-	</main>
+  <main>
+    <h1><span class="text-gradient">How to read Tarot</span></h1>
+
+    <TextCard
+      title="Art of Tarot"
+      text="I learned how to read Tarot using Stuart R. Kaplan's classic deck from the 80s, containing only the major arcana. The technique he describes is the 'Celtic Cross' spread, the oldest pattern and thus the most common. There are many other spreads, however. Some are listed in the links below. One tip is to have the querant (the person who is asking a question for the cards to interpret) to shuffle the card deck, to infuse it with their energy, before handing it back to the diviner to spread. Also remember that all cards have both an upright and a reversed meaning. If the card is reversed (from the diviner's perspective), it has a different meaning. Note also that the querant should be asking 'yes' or 'no' questions - the cards will answer this type of question best. A good example is 'will I get married soon?' or 'will I move houses soon?'"
+    />
+    <h2>
+      <span class="text-gradient"
+        >Guided Questions for the Celtic Cross Layout</span>
+    </h2>
+    <div class="extra-text">
+      <ul>
+        <li>Position 1: What is my calling, and what must I do?</li>
+        <li>Position 2: What happens if I walk away?</li>
+        <li>Position 3: What happens if I stay and work at it?</li>
+        <li>Position 4: What is the biggest challenge for me right now?</li>
+        <li>Position 5: How can I soothe any stress?</li>
+        <li>Position 6: What different approaches can I use?</li>
+        <li>Position 7: Who is my support system?</li>
+        <li>Position 8: What should I do to be truthful?</li>
+        <li>Position 9: How can I improve my knowledge and skills?</li>
+        <li>Position 10: How can I enjoy the journey?</li>
+      </ul>
+      <p>
+        Source: <a
+          href="https://psychicblaze.com/10-card-tarot-spread/"
+          target="_blank">Psychic Blaze</a>
+      </p>
+    </div>
+    <div class="extra-text">
+      <img class="link-card" src="/layout.png" width="100%" />
+    </div>
+  </main>
 </Layout>
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 100ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  a {
+    color: purple;
+    text-decoration: underline;
+    z-index: 500;
+    position: relative;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .extra-text {
+    list-style: none;
+    display: grid;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  }
+</style>
