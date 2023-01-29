@@ -24,15 +24,24 @@ const { title } = Astro.props;
           </div>
           <div id="links">
             <a href="/about">About</a>
-          	<a href="/read">How to Read Tarot</a>
-			<a href="/meanings">Meaning Match</a>
-          	<a href="https://jenlooper.gumroad.com/l/aws-tarot">Download a Printable Copy</a>
-          	<a href="https://www.etsy.com/shop/cuteitarium">✨Buy a Printed Pack✨</a>
+            <a href="/read">How to Read Tarot</a>
+            <a href="/meanings">Meaning Match</a>
+            <a href="https://jenlooper.gumroad.com/l/aws-tarot"
+              >Download a Printable Copy</a
+            >
+            <a href="https://www.etsy.com/shop/cuteitarium"
+              >✨Buy a Printed Pack✨</a
+            >
           </div>
 
-          <div class="mobile-btn">
-            <a id="menu-btn" onclick="myFunction()" class="fa fa-bars fa-2x"
-            ></a>
+          <div class="mobile-btn menu">
+            <a id="menu-btn">
+              <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+              </svg>
+            </a>
           </div>
         </div>
       </nav>
@@ -41,24 +50,47 @@ const { title } = Astro.props;
         <ul class="mobile-links">
           <li class="nav-list"><a href="/about">About</a></li>
           <li class="nav-list"><a href="/read">How to Read Tarot</a></li>
-		  <li class="nav-list"></li><a href="/meanings">Meaning Match</a></li>
-          <li class="nav-list"><a href="https://jenlooper.gumroad.com/l/aws-tarot">Download a Printable Copy</a></li>
-          <li class="nav-list"><a href="https://www.etsy.com/shop/cuteitarium">✨Buy a Printed Pack✨</a></li>
+          <li class="nav-list"></li><a href="/meanings">Meaning Match</a>
+        
+        <li class="nav-list">
+          <a href="https://jenlooper.gumroad.com/l/aws-tarot"
+            >Download a Printable Copy</a>
+        </li>
+        <li class="nav-list">
+          <a href="https://www.etsy.com/shop/cuteitarium"
+            >✨Buy a Printed Pack✨</a>
+        </li>
         </ul>
       </div>
     </header>
-	<div id="particles-js"></div>
-    <slot />
   </body>
+  <div id="particles-js"></div>
+  <slot />
 </html>
 
 <script>
- import "../data/particles.js";
- window.particlesJS.load('particles-js', '/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});</script>
+  import "../data/particles.js";
+  
+  window.particlesJS.load("particles-js", "/particles.json", function () {
+    console.log("callback - particles.js config loaded");
+    
+  });
 
+  const buttons = document.querySelectorAll('div.menu');
 
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      var x = document.getElementById("mobile-menu");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+    });
+  });
+
+</script>
 
 <style is:global>
   :root {
@@ -101,11 +133,9 @@ const { title } = Astro.props;
     font-family: "Open Sans", sans-serif;
     font-size: 30px;
     font-weight: 700;
-    color: #FFF;
+    color: #fff;
     text-transform: uppercase;
   }
-
-
 
   #links {
     display: grid;
@@ -118,7 +148,7 @@ const { title } = Astro.props;
 
   a {
     text-decoration: none;
-    color: #FFF;
+    color: #fff;
   }
 
   a:hover {
@@ -131,12 +161,10 @@ const { title } = Astro.props;
   .mobile-menu {
     display: block;
     list-style-type: none;
-    background-color: #fff;
-    float: right;
-    width: 150px;
-    padding: 5px 0 50px 0;
-    border: 1px solid #eee;
-    z-index: 55;
+    padding: 5px 0 5px 0;
+    background-image: var(--accent-gradient);
+    
+   z-index: 305;
   }
 
   .mobile-links li {
@@ -178,12 +206,11 @@ const { title } = Astro.props;
     }
   }
   #particles-js {
-	z-index: 100;
-	position:absolute;
+    z-index: 100;
+    position: absolute;
   }
   .particles-js-canvas-el {
-	width: 100vw;
-	height: 100vh;
-
+    width: 100vw;
+    height: 100vh;
   }
 </style>
