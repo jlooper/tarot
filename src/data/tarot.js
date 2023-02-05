@@ -19,7 +19,7 @@ export const Cards = [
         up:
             'Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent, if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science. ',
         rev: 'Passion, moral or physical ardour, conceit, surface knowledge.',
-        type: 'major', service: 'AWS Identity and Access Management (AIM)', meaning: 'Managing identity, security, and permissions across your apps, AIM can hold the key to the future of your infrastructure.'
+        type: 'major', service: 'AWS Identity and Access Management (IAM)', meaning: 'Managing identity, security, and permissions across your apps, AIM can hold the key to the future of your infrastructure.'
     },
     {
         name: 'The Empress',
